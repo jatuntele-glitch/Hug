@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Warm Hug For Riya Ji 🤍</title>
+<title>Long Distance Hug 🤍</title>
 
 <style>
 body{
@@ -12,7 +12,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffdde1);
+  background:linear-gradient(135deg,#ff9a9e,#fecfef,#fad0c4);
   font-family:'Segoe UI',sans-serif;
   overflow:hidden;
   color:#fff;
@@ -23,113 +23,128 @@ body{
 .heart{
   position:absolute;
   bottom:-20px;
-  animation:float 6s linear infinite;
+  animation:float 7s linear infinite;
   opacity:0.7;
 }
 @keyframes float{
   0%{transform:translateY(0);opacity:0;}
   50%{opacity:1;}
-  100%{transform:translateY(-100vh);opacity:0;}
+  100%{transform:translateY(-110vh);opacity:0;}
 }
 
-/* glass card */
+/* beat heart center */
+.beat-heart{
+  position:absolute;
+  font-size:65px;
+  top:12%;
+  animation:beat 1s infinite;
+  display:none;
+}
+@keyframes beat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.35);}
+}
+
+/* card */
 .card{
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.18);
   backdrop-filter:blur(18px);
-  padding:40px;
-  border-radius:25px;
-  box-shadow:0 0 50px rgba(0,0,0,0.25);
-  max-width:360px;
+  padding:42px;
+  border-radius:30px;
+  box-shadow:0 0 60px rgba(0,0,0,0.25);
+  max-width:380px;
   animation:fadeIn 2s ease;
 }
-
 @keyframes fadeIn{
-  from{opacity:0; transform:scale(0.8);}
+  from{opacity:0; transform:scale(0.85);}
   to{opacity:1; transform:scale(1);}
 }
 
-h2{
-  margin-bottom:10px;
-}
-
 button{
-  margin-top:20px;
-  padding:12px 26px;
+  margin-top:24px;
+  padding:15px 30px;
   border:none;
-  border-radius:25px;
-  font-size:16px;
+  border-radius:30px;
+  font-size:17px;
   cursor:pointer;
   background:#fff;
   color:#ff4d6d;
   font-weight:bold;
   transition:0.3s;
 }
-button:hover{
-  transform:scale(1.12);
-}
+button:hover{ transform:scale(1.12); }
 
-/* hug message */
 .hug{
   display:none;
-  font-size:22px;
-  margin-top:25px;
-  line-height:1.5;
-  animation:glow 1.5s infinite alternate;
+  font-size:20px;
+  margin-top:26px;
+  line-height:1.8;
+  animation:glow 1.6s infinite alternate;
 }
 @keyframes glow{
-  from{text-shadow:0 0 5px #fff;}
-  to{text-shadow:0 0 25px #fff;}
+  from{text-shadow:0 0 6px #fff;}
+  to{text-shadow:0 0 28px #fff;}
 }
 
-/* footer name */
 .footer{
   position:absolute;
   bottom:15px;
   width:100%;
   font-size:14px;
-  opacity:0.8;
+  opacity:0.85;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h2>Riya Ji… eyes close karo 🤍</h2>
-  <p>Navi tumhe miles door se ek warm hug bhej raha hai…</p>
+<!-- beat heart -->
+<div class="beat-heart" id="beatHeart">💓</div>
 
-  <button onclick="showHug()">Tap to Feel Navi’s Hug 🫂</button>
+<div class="card">
+
+  <h2>RIYA JI MERE ES LONG DISTANCE HUG NU FEEL KRO 😘🫂</h2>
+
+  <button onclick="showHug()">PRESS KRO FOR SURPRISE 😁</button>
 
   <div class="hug" id="hugText">
-    🫂 Tightest Hug For You Riya Ji <br><br>
-    Distance sirf km me hai…  
-    meri baahon ki jagah hamesha tumhare paas reserved hai. <br><br>
-    **Happy Hug Day meri jaan ❤️** <br><br>
-    — Tumhara Navi 💞
+    I LOVE U RIYAA JI SOO MUCH 😘😘 <br>
+    MISS U DAILY 😂😁 <br><br>
+
+    & I WANT TO HUG U BCZ MERE TE TUHDE JADOO DA ASR HOGEA 😂 <br>
+    TUSI MNU PGL KRTA JIWE NASHE D TORR HUNDII ❤️ <br><br>
+
+    LOVE U AGAIN 😘😘 <br>
+    MISS U 💞 <br>
+    MILDE AA APA JLDII 🤭😁 <br><br>
+
+    <b>TUHDA NAVI JI THNU EK WR FER I LOVE U KEH RHA ❤️🫂🥹</b>
   </div>
+
 </div>
 
 <div class="footer">Made with ❤️ by Navi</div>
 
-<!-- romantic music -->
+<!-- your song -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c2a8a8c64.mp3" type="audio/mp3">
+  <source src="song.mp3" type="audio/mp3">
 </audio>
 
 <script>
 function showHug(){
   document.getElementById("hugText").style.display="block";
+  document.getElementById("beatHeart").style.display="block";
   document.getElementById("music").play();
 }
 
-/* floating hearts generator */
-for(let i=0;i<30;i++){
+/* floating hearts background */
+for(let i=0;i<40;i++){
   let heart=document.createElement("div");
   heart.className="heart";
   heart.innerHTML="❤️";
   heart.style.left=Math.random()*100+"vw";
-  heart.style.animationDuration=(4+Math.random()*5)+"s";
-  heart.style.fontSize=(16+Math.random()*28)+"px";
+  heart.style.animationDuration=(5+Math.random()*5)+"s";
+  heart.style.fontSize=(16+Math.random()*32)+"px";
   document.body.appendChild(heart);
 }
 </script>
