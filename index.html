@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Long Distance Hug 🤍</title>
+
+<!-- ✅ NEW PAGE TITLE -->
+<title>TUHDE LY SURPRISE RIYA JI ❤️🤭</title>
 
 <style>
 body{
@@ -32,7 +34,7 @@ body{
   100%{transform:translateY(-110vh);opacity:0;}
 }
 
-/* beat heart center */
+/* beat heart */
 .beat-heart{
   position:absolute;
   font-size:65px;
@@ -98,7 +100,6 @@ button:hover{ transform:scale(1.12); }
 
 <body>
 
-<!-- beat heart -->
 <div class="beat-heart" id="beatHeart">💓</div>
 
 <div class="card">
@@ -125,19 +126,26 @@ button:hover{ transform:scale(1.12); }
 
 <div class="footer">Made with ❤️ by Navi</div>
 
-<!-- your song -->
+<!-- 🎵 YOUR SONG -->
 <audio id="music" loop>
   <source src="song.mp3" type="audio/mp3">
 </audio>
 
 <script>
+let started = false;
+
 function showHug(){
   document.getElementById("hugText").style.display="block";
   document.getElementById("beatHeart").style.display="block";
-  document.getElementById("music").play();
+
+  // ✅ play only once (tap se band nahi hoga)
+  if(!started){
+    document.getElementById("music").play();
+    started = true;
+  }
 }
 
-/* floating hearts background */
+/* floating hearts */
 for(let i=0;i<40;i++){
   let heart=document.createElement("div");
   heart.className="heart";
